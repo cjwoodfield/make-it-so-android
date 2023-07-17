@@ -54,6 +54,7 @@ import com.google.accompanist.permissions.rememberPermissionState
 import com.google.accompanist.permissions.shouldShowRationale
 import kotlinx.coroutines.CoroutineScope
 
+
 @Composable
 @ExperimentalMaterialApi
 fun MakeItSoApp() {
