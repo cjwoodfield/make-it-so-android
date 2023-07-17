@@ -39,6 +39,7 @@ import androidx.navigation.navArgument
 import com.example.makeitso.common.composable.PermissionDialog
 import com.example.makeitso.common.composable.RationaleDialog
 import com.example.makeitso.common.snackbar.SnackbarManager
+import com.example.makeitso.screens.edit_task.EditPlayerScreen
 import com.example.makeitso.screens.edit_task.EditTaskScreen
 import com.example.makeitso.screens.login.LoginScreen
 import com.example.makeitso.screens.players.PlayersScreen
@@ -142,7 +143,7 @@ fun NavGraphBuilder.makeItSoGraph(appState: MakeItSoAppState) {
 
   composable(TASKS_SCREEN) { TasksScreen(openScreen = { route -> appState.navigate(route) }) }
 
-//CW Edit
+  //CW Edit
   composable(PLAYERS_SCREEN) { PlayersScreen(openScreen = { route -> appState.navigate(route) }) }
   //
   composable(
@@ -154,4 +155,17 @@ fun NavGraphBuilder.makeItSoGraph(appState: MakeItSoAppState) {
       taskId = it.arguments?.getString(TASK_ID) ?: TASK_DEFAULT_ID
     )
   }
+
+//CW Edit
+  composable(
+    route = "$EDIT_PLAYER_SCREEN$PLAYER_ID_ARG",
+    arguments = listOf(navArgument(PLAYER_ID) { defaultValue = PLAYER_DEFAULT_ID })
+  ) {
+    EditPlayerScreen(
+      popUpScreen = { appState.popUp() },
+      taskId = it.arguments?.getString(PLAYER_ID) ?: PLAYER_DEFAULT_ID
+    )
+  }
+  //
+
 }

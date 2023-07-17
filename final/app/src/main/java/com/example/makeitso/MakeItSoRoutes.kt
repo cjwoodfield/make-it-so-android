@@ -25,8 +25,15 @@ const val EDIT_TASK_SCREEN = "EditTaskScreen"
 
 //Added by CWO to Test Adding Players
 const val PLAYERS_SCREEN = "PlayersScreen"
+const val EDIT_PLAYER_SCREEN = "EditPlayerScreen"
 //
 
 const val TASK_ID = "taskId"
 const val TASK_DEFAULT_ID = "-1"
 const val TASK_ID_ARG = "?$TASK_ID={$TASK_ID}"
+
+//Added by CWO to Test Adding Players
+const val PLAYER_ID = "playerId"
+const val PLAYER_DEFAULT_ID = "-1"
+const val PLAYER_ID_ARG = "?$PLAYER_ID={$PLAYER_ID}"
+//
