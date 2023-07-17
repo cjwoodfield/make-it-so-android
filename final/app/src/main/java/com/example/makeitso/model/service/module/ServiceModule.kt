@@ -18,12 +18,16 @@ package com.example.makeitso.model.service.module
 
 import com.example.makeitso.model.service.AccountService
 import com.example.makeitso.model.service.ConfigurationService
+import com.example.makeitso.model.service.ConfigurationServiceTEST
 import com.example.makeitso.model.service.LogService
 import com.example.makeitso.model.service.StorageService
+import com.example.makeitso.model.service.StorageServiceTEST
 import com.example.makeitso.model.service.impl.AccountServiceImpl
 import com.example.makeitso.model.service.impl.ConfigurationServiceImpl
+import com.example.makeitso.model.service.impl.ConfigurationServiceImplTEST
 import com.example.makeitso.model.service.impl.LogServiceImpl
 import com.example.makeitso.model.service.impl.StorageServiceImpl
+import com.example.makeitso.model.service.impl.StorageServiceImplTEST
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -40,4 +44,11 @@ abstract class ServiceModule {
 
   @Binds
   abstract fun provideConfigurationService(impl: ConfigurationServiceImpl): ConfigurationService
+
+  // CWO Added to proide dependency injection for modified Services
+  @Binds
+  abstract fun provideConfigurationServiceTEST(impl: ConfigurationServiceImplTEST): ConfigurationServiceTEST
+
+  @Binds
+  abstract fun provideStorageServiceTEST(impl: StorageServiceImplTEST): StorageServiceTEST
 }
