@@ -17,6 +17,7 @@ limitations under the License.
 package com.example.makeitso.screens.splash
 
 import androidx.compose.runtime.mutableStateOf
+import com.example.makeitso.PLAYERS_SCREEN
 import com.example.makeitso.SPLASH_SCREEN
 import com.example.makeitso.TASKS_SCREEN
 import com.example.makeitso.model.service.AccountService
@@ -42,7 +43,10 @@ class SplashViewModel @Inject constructor(
   fun onAppStart(openAndPopUp: (String, String) -> Unit) {
 
     showError.value = false
-    if (accountService.hasUser) openAndPopUp(TASKS_SCREEN, SPLASH_SCREEN)
+    //CW TEst - Start app on players screen instead of tasks screen
+    //if (accountService.hasUser) openAndPopUp(TASKS_SCREEN, SPLASH_SCREEN)
+    if (accountService.hasUser) openAndPopUp(PLAYERS_SCREEN, SPLASH_SCREEN)
+    // CW Test
     else createAnonymousAccount(openAndPopUp)
   }
 

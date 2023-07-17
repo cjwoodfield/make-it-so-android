@@ -41,6 +41,7 @@ import com.example.makeitso.common.composable.RationaleDialog
 import com.example.makeitso.common.snackbar.SnackbarManager
 import com.example.makeitso.screens.edit_task.EditTaskScreen
 import com.example.makeitso.screens.login.LoginScreen
+import com.example.makeitso.screens.players.PlayersScreen
 import com.example.makeitso.screens.settings.SettingsScreen
 import com.example.makeitso.screens.sign_up.SignUpScreen
 import com.example.makeitso.screens.splash.SplashScreen
@@ -141,6 +142,9 @@ fun NavGraphBuilder.makeItSoGraph(appState: MakeItSoAppState) {
 
   composable(TASKS_SCREEN) { TasksScreen(openScreen = { route -> appState.navigate(route) }) }
 
+//CW Edit
+  composable(PLAYERS_SCREEN) { PlayersScreen(openScreen = { route -> appState.navigate(route) }) }
+  //
   composable(
     route = "$EDIT_TASK_SCREEN$TASK_ID_ARG",
     arguments = listOf(navArgument(TASK_ID) { defaultValue = TASK_DEFAULT_ID })
